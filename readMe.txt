@@ -19,6 +19,16 @@ Date: February 16th, 2026
 Description:
 	Local static webpage served with python3 -m http.server version 3.12. Installed git for Ubuntu using the following command, "apt-get install git". Current git version installed "Git version 2.43.0" issued with command "git --version".
 
+Commands:
+	1) gh auth status
+	2) git status
+	3) git add .
+	4) git commit -m "MESSAGE"
+	5) git push origin
+	6) git config --global user.email "your_email@email.com"
+	7) git config --global user.name "username"
+	8) history (Lists all command history per terminal session with an optinal number)
+
 Comments/Actions
 	1) Created Naked-Bowser profile and generated private/public ssh key
 	2) Dowloaded git --version 2.43.0

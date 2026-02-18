@@ -1,9 +1,12 @@
 /**
  *	Author: Maramkhah, Shayon
  *	Date: January 9th, 2026
- *	Version: 1.1
+ *	Time: 11:29am
+ *	Update: February 18th, 2026
+ *	Version: 1.2
+ *	File: Styles.css
  *	Description: 
- *		Casscading style sheet designed to link style into HTML5 document.
+ *		Cascading style sheet designed to link style into HTML5 document.
  * ***/
 
 body{
@@ -11,20 +14,46 @@ body{
 	font-family: Arial;
 	font-size: 52px;
 	justify-content: center;
+	padding-left:2%;
+	padding-right:2%;
 }
 
 .Container{
 	display: flex;
+	justify-content:center;
+	height: 100%;
+	width: 100%;
+}
+
+.Content{
+	position: absolute;
+       	justify-content: center;
+	align-items: center;
+	flex-direction: column;	
+	
+}
+
+.Navigation-Bar{
+	float: right;
+	position: relative;
+	font-family: monospace;
+	font-size; 26px;
+	flex-direction:row;
+	align-items: stretch;	
+}
+
+.Container-Smasher{
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	position: absolute;
+	align-items:center;
 	border: 26px outset black;
+	margin-top: 26%;
 	width:100%;
-	height:75%;
-	margin-top: 10%;
-	margin-bottom: 10%;
-	margin-right: 10%;
-	margin-left: 10%;
+	height:100%;
 }
+
 
 .DotSmasher{
 	position: absolute;
