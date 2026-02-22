@@ -12,11 +12,11 @@
  *			3) Orient dot smasher
  * **/
 
+function Smasher(){
+	const MAX_INT = 256;
+	const dot = document.querySelector(".Dot");
+	dot.style.transform = `translateY(${Math.floor(Math.random() * MAX_INT-26)}px)`;
+	dot.style.transform += `translateX(${Math.floor(Math.random() * MAX_INT)}px)`;
+}
 
-const dot = document.querySelector(".Dot");
-
-document.addEventListener("click",(ev)=>{
-	dot.style.transform = `translateY(${ev.clientY - 25}px)`;
-	dot.style.transform += `translateX(${ev.clientX - 25}px)`;
-
-});
+setInterval(Smasher,1000);

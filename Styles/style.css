@@ -8,14 +8,16 @@
  *	Description: 
  *		Cascading style sheet designed to link style into HTML5 document.
  * ***/
-
 body{
 	margin: auto;
-	font-family: Arial;
-	font-size: 52px;
+	font-family: monospace;
 	justify-content: center;
 	padding-left:2%;
 	padding-right:2%;
+}
+
+a{
+	padding-right: 5px;
 }
 
 .Container{
@@ -23,6 +25,19 @@ body{
 	justify-content:center;
 	height: 100%;
 	width: 100%;
+}
+
+@media screen and (width < 400px){
+	.Container{
+		display: flex;
+		float: right;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 50%;
+		width: 50%;
+		padding-top: 5%;
+	}
 }
 
 .Content{
@@ -33,33 +48,68 @@ body{
 	
 }
 
+@media screen and (width < 400px){
+	.Content{
+		position: relative;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		font-size: 26px;
+		font-family: monospace;
+	}
+}
+
+.Points{
+	font-size: 52px;
+	font-family: monospace;
+	float: left;
+	position: absolute;
+	flex-direction: row;
+	align-items: center;
+}
+
 .Navigation-Bar{
+	display: flex;
 	float: right;
 	position: relative;
 	font-family: monospace;
 	font-size; 26px;
-	flex-direction:row;
-	align-items: stretch;	
+	flex-direction:row;	
 }
+
+
 
 .Container-Smasher{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	position: absolute;
-	align-items:center;
+	align-items: center;
 	border: 26px outset black;
 	margin-top: 26%;
-	width:100%;
-	height:100%;
+	width:900px;
+	height:600px;
 }
 
+@media screen and (width < 400px){
+	.Container-Smasher{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: absolute;
+		align-items: center;
+		border: 26px outset black;
+		margin-top: 26%;
+		width: 300px;
+		height: 250px;
+	}
+}
 
 .DotSmasher{
 	position: absolute;
 	border: 23px dashed blue;	
-	width:80%;
-	height: 75%;
+	width:	100%;
+	height: 100%;
 	margin-top:5%;
 	margin-bottom:5%;
 	margin-left:5%;
@@ -70,9 +120,22 @@ body{
 	border-radius: 25px;
 	width: 50px;
 	height: 50px;
-	background-color: #fc0303;
+	background-color: red;
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	transition: transform 1s;
+}
+
+@media screen and (width < 400){
+	.Dot{
+		border-radius: 25px;
+		width: 25px;
+		height: 25px;
+		background-color: red;
+	       	position: absolute;
+		top: 0px;
+		left: 0px;
+		transition: transform 1s;	
+	}
 }
