@@ -19,4 +19,20 @@ function Smasher(){
 	dot.style.transform += `translateX(${Math.floor(Math.random() * MAX_INT)}px)`;
 }
 
+const dot = document.querySelector(".Dot");
+const points = document.querySelector(".Points");
+
+var point = 0;
+
+dot.addEventListener("click",(ev)=>{
+	point ++;
+	if(point % 2 == 0){
+		dot.style.backgroundColor = "green";
+		points.innerText = point;
+	}else{
+		dot.style.backgroundColor = "red";
+		points.innerText = point;
+	}
+});
+
 setInterval(Smasher,1000);
