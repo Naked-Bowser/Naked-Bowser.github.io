@@ -10,7 +10,60 @@
  *			1) Intergrate Email correspondence
  *			2) Can you query google with Fetch API
  *			3) Orient dot smasher
+ *		Commands:
+ *			querySelector();
+ *			getBoundingClientRect();
+ *			classList.add
+ *			createElement
+ *			style.display
+ *			document.body.appendChild();
+ *			...
  * **/
+
+function ContainerIdentifier(){
+	const ele = document.querySelector(".Container-Smasher");
+	const rect = ele.getBoundingClientRect();
+	
+	for(const key in rect){
+		if(typeof rect[key] !== "function"){
+			const para = document.createElement("p");
+			para.style.justifyContent = "space-between";
+			para.style.paddingRight = "5px";
+			para.style.flexDirection = "row";
+			document.body.appendChild(para);
+			para.textContent = `${key} : ${rect[key]}`;
+		}
+	}
+
+}//end Container Identifier
+
+
+function AtomSmasher(){
+	const ele = document.querySelector(".Dot");
+	const rect = ele.getBoundingClientRect();
+	
+	const container = document.createElement("div");
+	container.classList.add("Info");
+	container.style.display = "flex";
+	document.body.appendChild(container);
+
+	function InnerPara(){
+	for(const key in rect){
+		if(typeof rect[key] !== "function"){
+			const para = document.createElement("p");
+			para.classList.add("Pinfo");
+			para.style.justifyContent = "space-between";
+			para.style.paddingRight = "5px";
+			para.style.flexDirection = "row";
+			document.body.appendChild(para);
+			container.appendChild(para);
+			para.textContent = `${key} : ${rect[key]}`;
+		}
+	  }
+	}//End function InnerPara
+	InnerPara();	
+}//End function AtomSmasher
+
 
 function Smasher(){
 	const MAX_INT = 256;
@@ -35,4 +88,10 @@ dot.addEventListener("click",(ev)=>{
 	}
 });
 
-setInterval(Smasher,1000);
+//setInterval(Smasher,1000);
+//AtomSmasher();
+ContainerIdentifier();
+
+
+
+

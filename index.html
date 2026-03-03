@@ -13,18 +13,36 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="Styles/style.css" type="text/css" rel="stylesheet">
-		<title>Example-Maker</title>
+		<title>ChattelBarrel</title>
 	</head>
 	<body>
 		<div class="Navigation-Bar">
 			<a href="HTML/static1.html"><p>Dot Smasher</p></a>
 			<a href="index.html"><p>Contact</p></a>
 		</div>
+		<p class="Wakeup" onmouseover="changeContent()" onmouseout="changeBack()">...</p><p class="Wakeup" onmouseover="changeContent()" onmouseout="changeBack()">...</p><p class="Wakeup" onmouseover="changeContent()" onmouseout="changeBack()">...</p>
 		<div class="Container">
+			<h1>Landing Page</h1>
+			<p>Learn business practice and principals through use-case development.</p>
 			<div class="Content">
-				<h1>Landing Page</h1>
-				<p>Learn business practices and principals through use-case development.</p>
+				<p>Grant Writing, Research Development, and Technologies.</p>
 			</div>
 		</div>
+		<div class="Test"><p class="Wakeup">...</p><p class="Wakeup">...</p><p class="Wakeup">...</p></div>
 	</body>
+	<script>
+		function changeContent(){
+			const element = document.querySelector(".Wakeup");
+			element.textContent = "Wake up Neo";
+			element.backgroundColor = "blue";
+			element.color = "green";
+			element.fontFamily = "monospace";
+			element.fontSize = "11px";
+		}
+
+		function changeBack(){
+			const element = document.querySelector(".Wakeup");
+			element.textContent = "...";
+		}
+	</script>
 </html>
