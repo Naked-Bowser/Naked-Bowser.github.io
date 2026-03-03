@@ -9,6 +9,7 @@
  *		Cascading style sheet designed to link style into HTML5 document.
  * ***/
 body{
+	overflow: hidden;
 	margin-right: 25%;
 	margin-left:25%;
 }

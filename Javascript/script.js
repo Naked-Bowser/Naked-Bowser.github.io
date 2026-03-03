@@ -66,11 +66,29 @@ function AtomSmasher(){
 
 
 function Smasher(){
-	const MAX_INT = 256;
 	const dot = document.querySelector(".Dot");
-	dot.style.transform = `translateY(${Math.floor(Math.random() * MAX_INT-26)}px)`;
-	dot.style.transform += `translateX(${Math.floor(Math.random() * MAX_INT)}px)`;
-}
+	const range = document.querySelector(".Container-Smasher");
+	const rect = range.getBoundingClientRect();
+	const obj = [];
+	for(const key in rect){
+		if(typeof rect[key] !== "function"){
+			obj.push(`${rect[key]}`);		
+		}
+	}
+
+	const x = obj[0]; const y = obj[1]; const width = obj[2]; const hieght = obj[3];
+	const topy = obj[4]; const righty = obj[5]; const bottom = obj[6]; const lefty = obj[7];
+	
+	//Set random top and left values for the smasher..
+	const MAX_INTw = width;
+	const leftX = dot.style.left = `${Math.floor(Math.random()*MAX_INTw)}px`;
+	
+	const MAX_INTh = hieght;
+	const topyh = dot.style.top = `${Math.floor(Math.random()*MAX_INTh)}px`; 
+	
+	dot.style.transform = `translateY(${right-topyh})px)`;
+	dot.style.transform += `translateX(${bottom-leftX})px)`;
+}// end function smasher...
 
 const dot = document.querySelector(".Dot");
 const points = document.querySelector(".Points");
@@ -86,9 +104,11 @@ dot.addEventListener("click",(ev)=>{
 		dot.style.backgroundColor = "red";
 		points.innerText = point;
 	}
+	dot.style.transform = `translateY(${topy-y})px`;
+	dot.style.transform = `translateX(${leftX-x})px`;
 });
 
-//setInterval(Smasher,1000);
+setInterval(Smasher,1000);
 //AtomSmasher();
 ContainerIdentifier();
 
