@@ -80,14 +80,14 @@ function Smasher(){
 	const topy = obj[4]; const righty = obj[5]; const bottom = obj[6]; const lefty = obj[7];
 	
 	//Set random top and left values for the smasher..
-	const MAX_INTw = width;
+	const MAX_INTw = righty-100;
 	const leftX = dot.style.left = `${Math.floor(Math.random()*MAX_INTw)}px`;
 	
-	const MAX_INTh = hieght;
+	const MAX_INTh = topy;
 	const topyh = dot.style.top = `${Math.floor(Math.random()*MAX_INTh)}px`; 
 	
-	dot.style.transform = `translateY(${right-topyh})px)`;
-	dot.style.transform += `translateX(${bottom-leftX})px)`;
+	dot.style.transform = `translateY(${(topyh)})px)`;
+	dot.style.transform += `translateX(${(leftX)-50})px)`;
 }// end function smasher...
 
 const dot = document.querySelector(".Dot");
@@ -97,6 +97,16 @@ var point = 0;
 
 dot.addEventListener("click",(ev)=>{
 	point ++;
+	if(point === 21){
+		points.style.backgroundColor = "red";
+		points.style.fontFamily = "impact";
+		points.style.fontSize = "75px";
+		points.style.float = "right";
+		points.style.postion = "absolute";
+		points.style.animationDuration = "5s";
+		points.style.animationName = "slide";
+		points.style.innerText= "GAME OVER!";
+	}
 	if(point % 2 == 0){
 		dot.style.backgroundColor = "green";
 		points.innerText = point;
@@ -104,8 +114,10 @@ dot.addEventListener("click",(ev)=>{
 		dot.style.backgroundColor = "red";
 		points.innerText = point;
 	}
-	dot.style.transform = `translateY(${topy-y})px`;
-	dot.style.transform = `translateX(${leftX-x})px`;
+
+	dot.style.transform = `translateY(${Math.floor(Math.random()*120)})px`;
+	dot.style.transform = `translateX(${Math.floor(Math.random()*255)})px`;
+	
 });
 
 setInterval(Smasher,1000);

@@ -29,6 +29,20 @@ a{
 	width: 100%;
 	margin-left:10%;
 	margin-right:10%;
+	animation-duration: 5s;
+	animation-name: slide;
+}
+
+@keyframes slide{
+	from{
+		translate: 150vw 0;
+		scale: 200% 1;
+	}
+
+	to{
+		translate: 0 0;
+		scale: 100% 1;
+	}
 }
 
 @media screen and (width < 400px){
@@ -40,6 +54,8 @@ a{
 		height: 50%;
 		width: 50%;
 		padding-top: 5%;
+		animation-duration: 5s;
+		animation-name: slide;
 	}
 }
 
@@ -48,7 +64,19 @@ a{
        	justify-content: right;
 	align-items: stretch;
 	flex-direction: column;	
-	
+	animation-duration: 5s;
+	animation-name: slide;
+}
+
+@keyframes slide{
+	from{
+		translate: 150vw 0;
+		scale: 200% 1;
+	}
+	to {
+		translate: 0 0;
+		scale: 100% 1;
+	}
 }
 
 .Text{
@@ -87,6 +115,8 @@ a{
 		align-items: stretch;
 		flex-direction: column;
 		font-family: monospace;
+		animation-duration: 5s;
+		animation-name: slide;
 	}
 }
 
@@ -115,7 +145,7 @@ a{
 	align-items: center;
 	flex-direction: column;
 	position: absolute;
-	border: 26px outset black;
+	border: 13px outset black;
 	width:900px;
 	height:600px;
 	top: 0px;
@@ -124,7 +154,7 @@ a{
 
 @media screen and (width < 400px){
 	.Container-Smasher{
-		border: 26px outset black;
+		border: 13px outset black;
 		margin-top: 26%;
 		width: 300px;
 		height: 250px;
@@ -139,6 +169,12 @@ a{
 	width: 50px;
 	height: 50px;
 	background-color: red;
+	background: repeating-radial-gradient(
+		black,
+		black 5px,
+		white 5px,
+		white 10px
+	);
 	position: absolute;
 	top: 0px;
 	left: 0px;
