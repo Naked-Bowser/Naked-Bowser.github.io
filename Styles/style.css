@@ -14,6 +14,10 @@ body{
 	margin-left:25%;
 }
 
+p{
+	padding-right: 13px;
+}
+
 a{
 	padding-right: 2px;
 }
@@ -25,7 +29,7 @@ a{
 	justify-content: center;
 	align-items: center;
 	font-family: monospace;
-	height: 100%;
+	height: 50%;
 	width: 100%;
 	margin-left:10%;
 	margin-right:10%;
@@ -122,17 +126,20 @@ a{
 
 .Points{
 	color: green;
-	float: right;
-	justify-content: center;
 	font-size: 52px;
 	font-family: monospace;
-	align-items: center;
-
+	position: absolute;
+	top: 0px;
+	left: 13px;
 }
 
 .Navigation-Bar{
 	display: flex;
 	justify-content: space-between;
+	position: absolute;
+	top: 0px;
+	left: 50vw;
+	align-items: center;
 	font-family: monospace;
 	font-size: 13px;	
 }

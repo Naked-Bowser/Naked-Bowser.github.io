@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ChattelBarrel</title>
+	</head>
+	<body style="margin:0; background: #000; overflow: hidden;">
+		<canvas style="display:block;"></canvas>
+	</body>
+	<script>
+		//set the canvas in preperation for the WINDOW requestAnimationFrame
+		const canvas = document.querySelector("canvas");
+		const ctx = canvas.getContext("2d");
+
+		canvas.width = window.innerWidth;//get innerwith relative to the viewport
+		canvas.height = window.innerHeight; //get innerHeight relative to the viewport
+		const letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";//great for future message
+		const lettersArray = letter.split(""); // does it return a new tokenized array?
+		const fontSize =20;
+		const columns = Math.floor(canvas.width/fontSize);// returns remainder
+		const drops = Array(columns).fill(0);
+
+		//global variables above
+		function draw(){			
+			ctx.fillStyle="rgba(0,0,0,0.05)"; //from 2d context a color..
+			ctx.fillRect(0,0,canvas.width,canvas.height); //from 2d context likely boundingClientRect..
+			ctx.fillStyle="#f7f7f7";
+			ctx.font= fontSize+"px monospace";
+				//loop through array
+			for(let i=0; i<drops.length;i++){
+				const text = lettersArray[Math.floor(Math.random()*lettersArray.length)];
+				ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+				
+				//condition
+				if(drops[i]*fontSize>canvas.height || Math.random()>0.975){
+					drops[i]=0;
+				}//end condition
+				drops[i]++;
+			}//end loop
+			requestAnimationFrame(draw);// reipaint canvas
+		}//end fucntion draw
+
+		draw();
+
+		window.addEventListener("resize",()=>{
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerheight;
+		});
+	</script>
+</html>

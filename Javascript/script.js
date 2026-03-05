@@ -20,51 +20,6 @@
  *			...
  * **/
 
-function ContainerIdentifier(){
-	const ele = document.querySelector(".Container-Smasher");
-	const rect = ele.getBoundingClientRect();
-	
-	for(const key in rect){
-		if(typeof rect[key] !== "function"){
-			const para = document.createElement("p");
-			para.style.justifyContent = "space-between";
-			para.style.paddingRight = "5px";
-			para.style.flexDirection = "row";
-			document.body.appendChild(para);
-			para.textContent = `${key} : ${rect[key]}`;
-		}
-	}
-
-}//end Container Identifier
-
-
-function AtomSmasher(){
-	const ele = document.querySelector(".Dot");
-	const rect = ele.getBoundingClientRect();
-	
-	const container = document.createElement("div");
-	container.classList.add("Info");
-	container.style.display = "flex";
-	document.body.appendChild(container);
-
-	function InnerPara(){
-	for(const key in rect){
-		if(typeof rect[key] !== "function"){
-			const para = document.createElement("p");
-			para.classList.add("Pinfo");
-			para.style.justifyContent = "space-between";
-			para.style.paddingRight = "5px";
-			para.style.flexDirection = "row";
-			document.body.appendChild(para);
-			container.appendChild(para);
-			para.textContent = `${key} : ${rect[key]}`;
-		}
-	  }
-	}//End function InnerPara
-	InnerPara();	
-}//End function AtomSmasher
-
-
 function Smasher(){
 	const dot = document.querySelector(".Dot");
 	const range = document.querySelector(".Container-Smasher");
@@ -90,39 +45,39 @@ function Smasher(){
 	dot.style.transform += `translateX(${(leftX)-50})px)`;
 }// end function smasher...
 
+//CODE BODY ?
 const dot = document.querySelector(".Dot");
 const points = document.querySelector(".Points");
 
 var point = 0;
 
+//EVENT LISTENER
 dot.addEventListener("click",(ev)=>{
 	point ++;
-	if(point === 21){
-		points.style.backgroundColor = "red";
-		points.style.fontFamily = "impact";
-		points.style.fontSize = "75px";
-		points.style.float = "right";
-		points.style.postion = "absolute";
-		points.style.animationDuration = "5s";
-		points.style.animationName = "slide";
-		points.style.innerText= "GAME OVER!";
-	}
 	if(point % 2 == 0){
 		dot.style.backgroundColor = "green";
 		points.innerText = point;
-	}else{
-		dot.style.backgroundColor = "red";
+	}else if(point % 2 != 0 ){
 		points.innerText = point;
 	}
+	if(point ===21){
+		points.style.backgroundColor = "red";
+		points.style.fontSize = "75px";
+		points.style.fontFamiliy = "impact";
+		points.style.float = "right";
+		points.style.position = "absolute";
+		points.style.animationDuration = "5s";
+		points.style.animationName = "slide";
+		points.innerText = "GAME OVER!";
+	}
+
 
 	dot.style.transform = `translateY(${Math.floor(Math.random()*120)})px`;
 	dot.style.transform = `translateX(${Math.floor(Math.random()*255)})px`;
 	
 });
 
-setInterval(Smasher,1000);
-//AtomSmasher();
-ContainerIdentifier();
+setInterval(Smasher,1500);
 
 
 
