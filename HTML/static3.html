@@ -1,0 +1,65 @@
+<!------
+	Author: Maramkhah, Shayon
+	Date: March 7th, 2026, 11:19pm
+	File: static3.html
+
+	Description:
+		Uptime page for developer launch dates. Focuses animation, graphs and time mangement.
+	--------->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, intial-scale=1.0">
+		<style>
+			body{overflow:hidden; margin-left:26%; margin-right:26%;} .Container{display:flex; height: 100%; width: 100%; animation-duration: 5s; animation-name: dropdown;}
+			.Content{justify-content:start;} .FormInput{display:inline-block;} .Uptime{display:block;}
+			@keyframes dropdown{from{transform: translateX(100%) translateY(100%);}to{transform: translateX(0%) translateY(0%);}} 
+		</style>
+		<title>ChattelBarrel</title>
+	</head>
+	<body>
+		<h1><strong>Uptime</strong></h1>
+		<div class="Container">
+			<div class="Content">
+				<div class="FormInput">
+					<fieldset>
+						<label for="Calendar">DATE TIME EXTRACTION</label>
+						<table>
+							<thead>
+								<tr>
+									<th scope="col">Day of Week</th>
+									<th scope="col">Hours</th>
+									<th scope="col">Task</th>
+									<th scope="col">Status</th>
+								</tr>
+							</thead>
+							<tbody><!--Might need JS event listener--->
+								<tr>
+									<th scope="row">Example Day</th>
+									<td>xample Hour</td>
+									<td>Radio task</td>
+									<td>Interpolated status</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th scope="row" colspan="2">Average xample</th>										<td>Average Downtime ...</td>
+								</tr>
+							</tfoot>
+							<caption>Month of ... ....</caption>
+						</table>	
+					</fieldset>
+				</div>
+				<div class="Uptime" hidden>
+				<!---Information about uptime--->
+				</div>
+				<div class="Downtime" hidden>
+					<!--Information about downtime--->
+				</div>
+				<canvas class="Data-representation"></canvas>
+			</div>
+		</div>
+	</body>
+</html>
+
