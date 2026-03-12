@@ -12,9 +12,9 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, intial-scale=1.0">
 		<style>
-			body{overflow:hidden; margin-left:26%; margin-right:26%;} .Container{display:flex; height: 100%; width: 100%; animation-duration: 5s; animation-name: dropdown;}
-			.Content{justify-content:start;} .FormInput{display:inline-block;} .Uptime{display:block;}
-			@keyframes dropdown{from{transform: translateX(100%) translateY(100%);}to{transform: translateX(0%) translateY(0%);}} 
+			body{overflow:hidden; margin-left:26%; margin-right:26%;} .Container{display:flex; height: 100%; width: 100%; margin-top:2%;  animation-duration: 5s; animation-name: dropdown;}
+			.Content{margin-top: 26%; justify-content:start; position: absolute;flex-Direction: row; width: 50%;height:100%;} .FormInput{display:block; position: absolute;} .Uptime{display:block;}
+			@keyframes dropdown{from{transform: translateX(100%) translateY(100%);}to{transform: translateX(0%) translateY(0%);}} @media screen and (width <400px){.Content{margin-left:10%; margin-right:10%; width:50%;height:50%;}}
 		</style>
 		<title>ChattelBarrel</title>
 	</head>
@@ -22,6 +22,10 @@
 		<h1><strong>Uptime</strong></h1>
 		<div class="Container">
 			<div class="Content">
+				<!----With the content hidden try to consume inputs from the user programatically
+					using script. One input field, validation, object store, handel, proccess,
+					render, input
+					---->
 				<div class="FormInput">
 					<fieldset>
 						<label for="Calendar">DATE TIME EXTRACTION</label>
@@ -61,5 +65,96 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		//First function
+		function RenderData(){
+			//On click event listener has been fired..
+			const tableBody = document.querySelector("tbody");
+			
+			//Create table row
+			const tableRow = document.createElement("tr");
+
+			//Create table header
+			const tableHeader = document.createElement("th");
+			tableHeader.scope = "row";
+			tableHeader.textContent = "Pass me a variable";
+			
+			//append to document body
+			tableBody.appendChild(tableRow);
+			tableBody.appendChild(tableHeader);
+
+			//Create three data fields and populate them
+			for(var i=0;i <=2; i++){
+				const tableData = document.createElement("td");
+				tableData.textContent = "give me data";
+				tableBody.appendChild(tableData);
+			}//end loop
+
+		}//end render data
+
+		//Second function
+		function ProccessData(){
+			//Make a reference to the class content
+			const content = document.querySelector(".Content");
+			
+			//Create text input with Label
+			const reuseableLabel = document.createElement("label");
+			reuseableLabel.textContent = "Please enter simple task"; //may change to radio button
+			reuseableLabel.classList.add("Uptime");
+			reuseableLabel.width = "26px";
+			reuseableLabel.height = "13px";
+			reuseableLabel.fontFamily = "impact";
+			reuseableLabel.fontSize = "12px";
+			reuseableLabel.position = "absolute";
+			reuseableLabel.justifyContent="center";
+			reuseableLabel.flexDirection = "flex-end";
+			reuseableLabel.display = "inline-block";
+			//append to content
+			document.body.appendChild(reuseableLabel);
+
+			const inputText = document.createElement("input");
+			inputText.type = "text";
+			inputText.placeholder = "Enter task here";
+			inputText.name = "Uptime-Task";
+			inputText.width = "26px";
+			inputText.height = "13px";
+			inputText.color = "green";
+			inputText.position = "absolute";
+			inputText.justifyContent = "center";
+			inputText.flexDirection = "flex-end";
+			inputText.display = "inline-block";
+			//append to content
+			document.body.appendChild(inputText);
+
+
+			//Create Button for submission
+			const buttonSubmit = document.createElement("input");
+			buttonSubmit.width ="13px";
+			buttonSubmit.height ="13px";
+			buttonSubmit.color = "green";
+			buttonSubmit.justifyContent = "center";
+			buttonSubmit.position = "absolute";
+			buttonSubmit.type = "button";
+			buttonSubmit.value = "Submit";
+			buttonSubmit.name = "uptime";
+			buttonSubmit.flexDirection = "flex-end";
+			buttonSubmit.display = "inline-bock";
+			buttonSubmit.classList.add("Uptime");
+
+			//add to document body
+			document.body.appendChild(buttonSubmit);
+			
+
+			//Add event listner on the button
+			//.....
+			buttonSubmit.addEventListener("click", RenderData);
+			
+
+		}//end function
+
+
+		// run functions ...
+		ProccessData();
+	</script>
 </html>
 
