@@ -1,15 +1,19 @@
 Author: Maramkhah, Shayon
 Date: January 14th, 2026
+Revisions: March 20th, 2026, 10:41am
 Description:
 	Local static webpage being served up using python3 version 3.12. 
 
 Question:
 	Why is the file directorty being served up?
+		a) Python3 is using likely using the file input output system.
 	How does an HTTP server work?
+		a) It works with core concepts and technology. Must be IANA. Requires an origin server capable of a simple TCP handshake. Should understand CDN("Content Delivery Network") and edge servers. Needs caching system with database to prove it's origin.  
 	What is CRUD (CREAT, READ, UPDATE, DELETE)?
+		a) POST, GET, PUT, DELETE
 	What are some HTTP status codes (200 ok, 201 created, 400 Bad Gateway, 404 Page not fouund)?
-	How to decrease development uptime?
-	
+		a) 1xx information, 2xx status codes, 3xx modified, 4xx Gateway, 5xx internal server
+			
 Commands:
 	python3 -m http.server
 	ctrl + shift + R (addresses 304 not modified issue)
