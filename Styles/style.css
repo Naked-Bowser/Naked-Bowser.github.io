@@ -23,7 +23,7 @@ a{
 	padding-right: 2px;
 }
 
-.Container1,.Container3{
+.Container2,.Container3{
 	box-shadow: 2px 3px 5px 8px rgb(64 128 255);
 	padding-top:25px;
 }
@@ -54,6 +54,9 @@ a{
 		height: 50%;
 		width: 50%;
 		padding-top: 5%;
+		animation-name: crawl-play 255s linear infinite;
+		perspective: 400px;
+		font-family: 'Path Way Gothic One', sans-serif;
 	}
 }
 

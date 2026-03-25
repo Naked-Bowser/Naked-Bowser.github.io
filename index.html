@@ -6,7 +6,7 @@
 	Update: March 3rd, 2026, 7:05pm
 	File: index.html
 	Description:
-		Index for github pages designed for encourging the development proccess with regards to building use-cases.
+		Serving up files from the local html structure using the fetch API. the Purpose is to have content oragnaized and secured for dynamic content loading.
 	--->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,14 +26,25 @@
 		<div class="Container2"></div>
 		<div class="Container3"></div>
 		<div class="Container">
-			<div class="Content">
-				<h1>Landing Page</h1>
-				<p>Learn business practices and principals through use-case development.</p>
-				<p>Grant Writing, Research Development, and Technologies.</p>
+			<div class="Content1">
+				<h1>Landing Page 1</h1>
+				<p>Learn business <strong>practices</strong> and <strong>principals</strong> through use-case development.</p>
+				<p id="Info1">...</p>
+			</div>
+			<div class="Content2">
+				<h1> Landing Page 2</h1>
+				<p>Grant Writing, research Development, and Technologies.</p>
+				<p id="Info2">...</p>
 			</div>
 		</div>
 	</body>
 	<script>
+		/**
+		Try to think dynamically. Can you have your descriptive content located in the file system? For content ... you can have your fetch API grab text from your file system and have them rendered on mouseover.
+		***/
+
+		//Function for rendering content file please.
+
 		function changeContent(){
 			const element = document.querySelector(".Wakeup");
 			element.textContent = "Wake up Neo";
