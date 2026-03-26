@@ -12,15 +12,19 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, intial-scale=1.0">
 		<style>
-			body{overflow:hidden; margin-left:26%; margin-right:26%;} .Container{display:flex; height: 100%; width: 100%; margin-top:2%; margin-bottom: 10%;}
-			.Content{margin-top: 45%; justify-content:start; position: absolute;flex-Direction: row; width: 50%;height:50%; animation-duration: 5s; animation-name: dropdown; } .FormInput{display:block; position: absolute;} .Uptime{display:block;}
-			@keyframes dropdown{from{transform: translateX(100%) translateY(100%);}to{transform: translateX(0%) translateY(0%);}} @media screen and (width <400px){.Content{margin-left:10%; margin-right:10%; width:50%;height:50%;}}
+body{overflow:hidden; margin-left:26%; margin-right:26%; display:flex;} .Container{display:inline-flex; height: 100%; width: 100%; margin-top:36%;} @media screen and (width <400){.Container{display:inline-flex; }}
+			.Content{display: inline-flex; width: 50%;height:50%; animation-duration: 5s; animation-name: dropdown; } @media screen and(width < 400){.Content{margin-top:25%; display:inline-flex;  width:50%; height:50%;}}  .FormInput{display:block; position: absolute;} .Uptime{display:block;} @media screen and(width<400){body{overflow:hidden;}}
+			
+			@keyframes dropdown{from{transform: translateX(100%) translateY(100%);}to{transform: translateX(0%) translateY(0%);}}
 		</style>
 		<title>ChattelBarrel</title>
 	</head>
 	<body>
 		<h1><strong>Uptime</strong></h1>
 		<div class="Container">
+			<!--Proccessing tages found here-->
+		</div>
+			<div class="Unknown">
 			<div class="Content">
 				<!----With the content hidden try to consume inputs from the user programatically
 					using script. One input field, validation, object store, handel, proccess,

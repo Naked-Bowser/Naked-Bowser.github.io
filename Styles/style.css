@@ -12,7 +12,6 @@ body{
 	overflow: hidden;
 	margin-right: 25%;
 	margin-left:25%;
-	background-color: rgb(128 64 64);
 }
 
 p{
@@ -23,50 +22,44 @@ a{
 	padding-right: 2px;
 }
 
-.Container2,.Container3{
-	box-shadow: 2px 3px 5px 8px rgb(64 128 255);
-	padding-top:25px;
-}
 .Container{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background-color: rgb(255 64 32);
-	border-radius: 50% 20% / 10% 40%; 
-	box-shadow: 2px 3px 5px 8px rgb(64 128 255);
-	height: 50%;
+	display: inline-flex;
+	float: right;
 	width: 100%;
-	margin-top: 20%;
-	margin-left:10%;
-	margin-right:10%;
-	animation-name: crawl-play 255s linear infinite;
+	margin-bottom: 56%;
+	animation: crawl-play 255s linear infinite;
 	perspective: 400px;
 	font-family: 'Path Way Gothic One', sans-serif;
 }
 
 @media screen and (width < 400px){
 	.Container{
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		height: 50%;
-		width: 50%;
+		display: inline-flex;
+		float: right;
+		width: 100%;
+		margin-bottom: 56%;
 		padding-top: 5%;
-		animation-name: crawl-play 255s linear infinite;
+		animation: crawl-play 255s linear infinite;
 		perspective: 400px;
 		font-family: 'Path Way Gothic One', sans-serif;
 	}
 }
 
 .Content{
-	align-items: stretch;
-	flex-direction: column;	
-	position: absolute;
+	display: block;
+	perspective: 400px;
+	margin-top: 56%;
 	transform-style: preserve-3d;
-	animation: crawl-play 255s linear infinite;
+	animation: crawl-play 56s linear infinite;
 }
+
+@media screen and (width < 400){.Content{
+	display: block;
+	margin-top: 56%;
+	perspective: 400px;
+	transform-style: preserve-3d;
+	animation: crawl-play 56s linear infinite;
+}}
 
 @keyframes crawl-play{
 	50%{
@@ -81,34 +74,6 @@ a{
 	}
 }
 
-.Wakeup{
-	flex-direction: row;
-	align-items: stretch;
-	margin: 20px 50px 10px;
-}
-
-@media screen and (width < 400px){
-	.Wakeup{
-		float: right;
-		flex-direction: row;
-		align-items: stretch;
-		justify-content: right;
-		margin-top:20%;
-		margin-right:20%;
-	}
-}
-
-@media screen and (width < 400px){
-	.Content{
-		float: right;
-		justify-content: right;
-		align-items: stretch;
-		flex-direction: column;
-		font-family: monospace;
-		animation: crawl-play 255s linear infinite;
-	}
-}
-
 .Points{
 	color: green;
 	font-size: 52px;
@@ -119,14 +84,13 @@ a{
 }
 
 .Navigation-Bar{
-	display: flex;
-	justify-content: space-between;
-	position: absolute;
+	display: inline-flex;
+	flex-direction: row;
 	margin: 10px 50px 20px;
 	align-items: center;
 	font-family: monospace;
 	font-size: 13px;
-		
+	
 }
 
 .Container-Smasher{
