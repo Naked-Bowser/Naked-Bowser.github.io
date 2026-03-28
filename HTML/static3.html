@@ -21,8 +21,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, intial-scale=1.0">
 		<style>
-body{overflow:hidden; margin-left:26%; margin-right:26%; display:flex;} .Container{display:inline-flex; height: 100%; width: 100%; margin-top:36%;} @media screen and (width <400){.Container{display:inline-flex; }}
-			.Content{display: inline-flex; width: 50%;height:50%; animation-duration: 5s; animation-name: dropdown; } @media screen and(width < 400){.Content{margin-top:25%; display:inline-flex;  width:50%; height:50%;}}  .FormInput{display:block; position: absolute;} .Uptime{display:block;} @media screen and(width<400){body{overflow:hidden;}}
+body{overflow:none; display:flex; border: solid; flex-direction: column; } .Container{display:inline; flex-direction:row;} @media screen and (width <400){.Container{display:inline; }}
+			.Content{display: inline; flex-direction:row; width: 50%;height:50%; animation-duration: 5s; animation-name: dropdown; } @media screen and(width < 400){.Content{margin-top:25%; display:inline-flex;  width:50%; height:50%;}}  .FormInput{display:block; position: absolute;} .Uptime{display:block;} @media screen and(width<400){body{overflow:hidden;}}
 			
 			@keyframes dropdown{from{transform: translateX(100%) translateY(100%);}to{transform: translateX(0%) translateY(0%);}}
 		</style>
@@ -30,16 +30,9 @@ body{overflow:hidden; margin-left:26%; margin-right:26%; display:flex;} .Contain
 		<meta name="description" content="Productivity utilization. Stashable web-technology.">
 	</head>
 	<body>
-		<h1><strong>Uptime</strong></h1>
-		<div class="Container">
-			<!--Proccessing tages found here-->
-		</div>
-			<div class="Unknown">
+		<div class="Container"><!--Proccessing tages found here--><!---Select option tags are Good Idea---></div>
 			<div class="Content">
-				<!----With the content hidden try to consume inputs from the user programatically
-					using script. One input field, validation, object store, handel, proccess,
-					render, input
-					---->
+				<!---Table----->
 				<div class="FormInput">
 					<fieldset>
 						<label for="Calendar">EXTRACTION POINT</label>
@@ -53,10 +46,7 @@ body{overflow:hidden; margin-left:26%; margin-right:26%; display:flex;} .Contain
 							</thead>
 							<tbody><!--Might need JS event listener--->
 								<tr>
-									<th scope="row">LAUNCH PAD</th>
-									<td>Radio Group</td>
-									<td>Number Hours</td>
-									<td>Color Picker</td>
+									<!---Populate data information Knowledge--->
 								</tr>
 							</tbody>
 							<tfoot>
@@ -68,15 +58,10 @@ body{overflow:hidden; margin-left:26%; margin-right:26%; display:flex;} .Contain
 						</table>	
 					</fieldset>
 				</div>
-				<div class="Uptime" hidden>
-				<!---Information about uptime--->
-				</div>
-				<div class="Downtime" hidden>
-					<!--Information about downtime--->
-				</div>
+				<div class="Uptime" hidden><!---Information about uptime---></div>
+				<div class="Downtime" hidden><!--Information about downtime---></div>
 				<canvas class="Data-representation"></canvas>
-			</div>
-		</div>
+				</div><!--End of FormInput-->
 	</body>
 	<script>
 		//Global variables passed to functions as arguments...
@@ -163,7 +148,7 @@ body{overflow:hidden; margin-left:26%; margin-right:26%; display:flex;} .Contain
 			buttonSubmit.display = "inline-bock";
 			buttonSubmit.classList.add("Uptime");
 			
-			container.appendChild(buttonSubmit);
+			fieldset.appendChild(buttonSubmit);
 
 		}//end function
 
