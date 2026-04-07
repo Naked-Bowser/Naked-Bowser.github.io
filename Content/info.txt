@@ -1,0 +1,69 @@
+<!--
+	Author: Maramkhah, Shayon
+	Date: February 18th, 2026
+	Time: 10:40am
+	Version: 1.2
+	Update: March 3rd, 2026, 7:05pm
+	File: index.html
+	Description:
+		Serving up files from the local html structure using the fetch API. the Purpose is to have content oragnaized and secured for dynamic content loading.
+	--->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Z7L5QX56F"></script>
+	<script>
+  	window.dataLayer = window.dataLayer || [];
+  	function gtag(){dataLayer.push(arguments);}
+  	gtag('js', new Date());
+
+  	gtag('config', 'G-1Z7L5QX56F');
+	</script>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="Styles/style.css" type="text/css" rel="stylesheet">
+		<title>ChattelBarrel</title>
+		<meta name="description" content="Light weight content development for introductionary static pages.">
+	</head>
+	<body>
+		<div class="Navigation-Bar">
+			<a href="HTML/static1.html"><p>Dot Smasher</p></a>
+			<a href="HTML/static2.html"><p>Contact</p></a>
+			<a href="HTML/static3.html"><p>Uptime</p></a>
+		</div>
+		<div class="Container">
+			<h1 id="who"><strong>WHO</strong></h1>
+			<h2 id="what"><strong>WHAT</strong></h2>
+			<h3 id="where"><strong>WHERE</strong></h3>
+			<h4 id="when"><strong>WHEN</strong></h4>
+			<h5 id="how"><strong>HOW</strong></h5>
+			<h6 id="why"><strong>WHY</strong></h6>
+		</div>
+			<div class="Content">
+				<h1>Landing Page 1</h1>
+	<p>Learn business <strong>practices</strong> and <strong>principals</strong> through use-case development.</p>
+		</div>
+	</body>
+	<script>
+		/**
+		Can you have your descriptive content located in the file system? For content ... you can have your fetch API grab text from your file system and have them rendered on mouseover.**/
+		const touch = document.querySelector(".Container");
+		touch.addEventListener("touchmove",(event)=>{
+			const e1 = document.getElementById("who");
+			const e2 = document.getElementById("what");
+			const e3 = document.getElementById("where");
+			const e4 = document.getElementById("When");
+			const e5 = document.getElementById("how");
+			const e6 = document.getElementById("why");
+			
+			e1.paddingRight = "2px";
+			e2.paddingRight = "2px";
+			e3.paddingRight = "2px";
+			e4.paddingRight = "2px";
+			e5.paddingRight = "2px";
+			e6.paddingRight = "2px";
+		});
+	</script>
+</html>

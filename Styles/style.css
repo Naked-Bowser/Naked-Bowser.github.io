@@ -13,7 +13,7 @@
 body{
 	overflow: hidden;
 	margin-right: 25%;
-	margin-left:25%;
+	margin-left: 25%;
 }
 
 p{
@@ -117,29 +117,28 @@ a{
 	border-radius: 3px inset black;
 	border: 11mm ridge rgba(211 200 50/0.6);
 	box-shadow: 2px 6px 0.24em 0.21em rgba(0 304 0/0.6);
+	position: absolute;
 	opacity: 1.0;
-	filter: blur(0px);
+	filter: blur(0px) brightness(33%);
 	align-items: center;
 	font-family: monospace;
 	font-size:13px;
-       	animation: bounce 56s vertical	
+       	animation: bounce 56s vertical;	
 }
 
 @keyframes bounce{
 	from{
 		perspective: 200px;
 		transform: translateY(0px) translateX(0px);
-		transition: transform 1s;
+		transition: transform 55s;
 		/*top*/
-		top: 50%;
 		/*left*/
 		
 	}
 	to{
 		perspective: 33em;
-		transform: translateY(-33px) translateX(-64px);
-		transition: transform 1s;
-		top:100%;
+		transform: translateY(33px) translateX(64px);
+		transition: transform 55s;
 	}
 }
 

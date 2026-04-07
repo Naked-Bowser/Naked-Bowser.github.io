@@ -1,6 +1,10 @@
 Author: Maramkhah, Shayon
 Date: January 14th, 2026
 Revisions: March 20th, 2026, 10:41am
+
+Notice/Advisary:
+	Testing and debugging is taking place on you local machine. Don't be embarrassed.
+
 Description:
 	Local static webpage being served up using python3 version 3.12. 
 
