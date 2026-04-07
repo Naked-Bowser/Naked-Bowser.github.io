@@ -26,8 +26,8 @@ const points = document.querySelector(".Points");
 
 const dot = document.querySelector(".Dot");
 const dotRange = dot.getBoundingClientRect();//Make sure dot is less than or equal to bounds!
-const range = document.querySelector(".Container-Smasher");//container
-const rect = range.getBoundingClientRect();//Container bounds
+const containerBody = document.querySelector("body");//container body
+const rect = dot.getBoundingClientRect();//Container bounds
 
 const obj = [];//rect bounds
 for(const key in rect){
@@ -45,8 +45,8 @@ for(const key in dotRange){
 }
 
 //Assign random values to top and left
-dot.style.top = `${Math.floor(Math.random()*obj[1])}px`;
-dot.style.left = `${Math.floor(Math.random()*obj[5])}px`;
+dot.style.top = `${Math.floor(Math.random()*400)}px`;
+dot.style.left = `${Math.floor(Math.random()*400)}px`;
 
 //Point for the event listener
 var point =0;
@@ -61,10 +61,19 @@ function Smasher(obj){
 }// end function smasher...
 
 //EVENT LISTENER
-dot.addEventListener("click",(ev)=>{
+containerBody.addEventListener("click",(ev)=>{
 	point ++;
-	dot.style.transform = `translateY(${Math.floor(Math.random()*obj[4]-obj[1])}px)`;//width*height of rect
-	dot.style.transform += `translateX(${Math.floor(Math.random()*obj[6]-obj[0])}px)`;//right
+	let x = ev.clientX;
+	let y = ev.clientY;
+	//
+	const maxX = window.innerWidth -rect.width;
+	const maxY = window.innerHeight -rect.height;
+
+	x = Math.min(Math.max(0,x),maxX);
+	y = Math.min(Math.max(0,y),maxY);
+	
+	dot.style.transform = `translateY(${y}px)`;
+	dot.style.transform += `translateX(${x}px)`;
 	if(point % 2 == 0){
 		dot.style.backgroundColor = "green";
 		points.innerText = point;

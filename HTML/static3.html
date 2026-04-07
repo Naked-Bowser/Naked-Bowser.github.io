@@ -45,9 +45,7 @@ body{overflow:none; display:flex; border: solid; flex-direction: column; } .Cont
 								</tr>
 							</thead>
 							<tbody><!--Might need JS event listener--->
-								<tr>
-									<!---Populate data information Knowledge--->
-								</tr>
+								<!---Populate data information Knowledge--->
 							</tbody>
 							<tfoot>
 								<tr>
@@ -67,7 +65,11 @@ body{overflow:none; display:flex; border: solid; flex-direction: column; } .Cont
 		//Global variables passed to functions as arguments...
 		const container = document.querySelector(".Container");
 		const fieldset = document.createElement("fieldset");
+		const operatorTable = document.querySelector("tbody");//wish to appendchild here
 		
+
+
+
 		//INFO: Proccessing, Rendering, Mapping, Research, Storing 
 		const obj = {
 			0:{
@@ -112,6 +114,7 @@ body{overflow:none; display:flex; border: solid; flex-direction: column; } .Cont
 			const lbl = document.createElement("label");
 			const inputText = document.createElement("input");
 			inputText.type = "radio";
+			inputText.classList.add("UpRadio");
 			inputText.name = obj[key].name;
 			inputText.value = obj[key].value;
 			inputText.id = obj[key].id;
@@ -155,6 +158,21 @@ body{overflow:none; display:flex; border: solid; flex-direction: column; } .Cont
 
 		// run functions ...
 		RadioButton(obj,container,fieldset);
+
+		const btnSubmit = document.querySelector(".Uptime");
+		
+		btnSubmit.addEventListener("click",()=>{
+			const radElement = document.querySelector(".UpRadio");
+			const row = document.createElement("tr");
+			const data = document.createElement("td");
+			data.innerText = radElement.id;
+			row.appendChild(data);
+			operatorTable.appendChild(row);
+			if(divGroup){//container get parent and remove child...
+				divGroup.remove();
+			}
+		});
+
 	</script>
 </html>
 

@@ -28,10 +28,12 @@
 		<meta name="description" content="Light weight content development for introductionary static pages.">
 	</head>
 	<body>
-		<div class="Navigation-Bar">
+		<div class="Navigation-Bar1">
+			<div class="Navigation-Bar">	
 			<a href="HTML/static1.html"><p>Dot Smasher</p></a>
 			<a href="HTML/static2.html"><p>Contact</p></a>
 			<a href="HTML/static3.html"><p>Uptime</p></a>
+			</div>
 		</div>
 		<div class="Container">
 			<h1 id="Who"><strong>WHO</strong></h1>
@@ -47,11 +49,53 @@
 		</div>
 	</body>
 	<script>
-		/****************/
+		/********iframe
+			document.childElementCount
+			querySelectorAll()
 
-		const touch = document.getElementById("Who");
-		touch.style.top = "128px";
-		touch.style.left = "64px";
+		********/
+			const e1 = document.getElementById("Who");
+                        const e2 = document.getElementById("What");
+                        const e3 = document.getElementById("Where");
+                        const e4 = document.getElementById("When");
+                        const e5 = document.getElementById("How");
+                        const e6 = document.getElementById("Why");
+
+		const container = document.querySelector(".Container");
+		const children = container.querySelectorAll("h1,h2,h3,h4,h5,h6");
+
+		children.forEach(element =>{
+			element.onmouseenter = function(){
+				setTimeout(()=>{
+					e1.style.paddingLeft="5px"; e1.style.perspective="200px";
+					e2.style.paddingLeft="4px"; e2.style.perspective="300px";
+					e3.style.paddingLeft="3px"; e3.style.perspective="400px";
+					e4.style.paddingLeft="2px"; e4.style.perspective="500px";
+					e5.style.paddingLeft="2px"; e5.style.perspective="600px";
+					e6.style.paddingLeft="2px"; e6.style.perspective="700px";
+				},5000);
+			
+				setTimeout(()=>{
+                                        e1.style.paddingLeft="0px"; e1.style.perspective="100px";
+                                        e2.style.paddingLeft="0px"; e2.style.perspective="200px";
+                                        e3.style.paddingLeft="0px"; e3.style.perspective="300px";
+                                        e4.style.paddingLeft="0px"; e4.style.perspective="400px";
+                                        e5.style.paddingLeft="0px"; e5.style.perspective="500px";
+                                        e6.style.paddingLeft="0px"; e6.style.perspective="600px";
+                                },3000);
+
+				setTimeout(()=>{
+                                        e1.style.paddingLeft="5px"; e1.style.perspective="600px";
+                                        e2.style.paddingLeft="4px"; e2.style.perspective="500px";
+                                        e3.style.paddingLeft="3px"; e3.style.perspective="400px";
+                                        e4.style.paddingLeft="2px"; e4.style.perspective="300px";
+                                        e5.style.paddingLeft="2px"; e5.style.perspective="200px";
+                                        e6.style.paddingLeft="2px"; e6.style.perspective="100px";
+                                },1000);
+
+			};
+		});
+
 
 	</script>
 </html>
