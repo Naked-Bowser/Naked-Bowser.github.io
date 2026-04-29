@@ -40,6 +40,7 @@ const body = document.querySelector("body");
 body.appendChild(points);
 
 getDot.addEventListener("click",(e)=>{
+	alert("Love you mom, From Shayon!");
 	point+=1;
 	points.innerText = `${point}`;
 	getDot.style.top = `${Math.floor(Math.random()*getParameters1.height)}px`;
