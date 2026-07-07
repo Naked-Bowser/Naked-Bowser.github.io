@@ -2,6 +2,8 @@ Author: Maramkhah, Shayon
 Date: January 14th, 2026
 Revisions: March 20th, 2026, 10:41am
 
+POST NOTE:
+	Where is the randomart image.........May 20th, 23:49, 2026
 Notice/Advisary:
 	Testing and debugging is taking place on you local machine. Don't be embarrassed.
 
