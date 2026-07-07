@@ -8,7 +8,7 @@
 
 function drawit(){
 	const canvas = document.getElementById("canvas");
-	const ctx = getContext("2d");
+	const ctx = canvas.getContext("2d");
 	ctx.fillStyle="yellow";
 	ctx.fillRect(10,10,55,100);
 	requestAnimationFrame(drawit);
