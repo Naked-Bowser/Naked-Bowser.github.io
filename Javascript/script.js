@@ -6,14 +6,16 @@
 
 //Reference document object model cavans...
 
-function drawit(){
-	const canvas = document.getElementById("canvas");
-	const ctx = canvas.getContext("2d");
-	ctx.fillStyle="yellow";
-	ctx.fillRect(10,10,55,100);
-	requestAnimationFrame(drawit);
+var randomNumber= Math.floor(Math.random()*100 + 1);
+
+function draw(){
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+ctx.fillStyle="blue";
+ctx.fillRect(randomNumber,randomNumber,randomNumber,randomNumber);
+requestAnimationFrame(draw);
 }
 
-drawit();
+requestAnimationFrame(draw);
 
 
