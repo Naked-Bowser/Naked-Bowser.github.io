@@ -13,17 +13,23 @@ async function getTextBegin(){
 	if(!response.ok){
 		throw new Error(`HTTP error! Status:${response.status}`);
 	}
-		const result =await response.blob();
+		const result =await response.text();
 		console.log(`${result}`);
-		childParagrpah.innerText= result;
-		paragraph1.appendChild(childParagraph);
-	})catch{
+		paragraph.appendChild(childParagraph);
+		childParagraph.innerText=result;
+	}catch(error){
 		console.log(`${error}`);
-	}
+	}//end catch
 
+
+}//end async
+
+getTextBegin();
 
 btn.addEventListener("click",()=>{
-	highlight.innerText += ", "+input.value;
-	input.value="";
-	
+        highlight.innerText = ", "+input.value;
+        input.value="";
+
 });
+
+
